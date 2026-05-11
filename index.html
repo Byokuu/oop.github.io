@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivet Watch Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <img src="img/header.jpg" alt="Vivet Banner">
+    <div class="header-title">VIVET</div>
+  </header>
+
+  <nav class="nav">
+    <label>Collections</label>
+    <a href="index.html">Home</a>
+    <a href="luxurywatch.html">Luxury</a>
+    <a href="sportswatch.html">Sports</a>
+    <a href="classicwatch.html">Classic</a>
+    <a href="digitalwatch.html">Digital</a>
+    <a href="#footer">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <aside class="aside">
+      <label><strong>Key Catalog</strong></label>
+      <p><small>Shortcuts:</small></p>
+      <ul>
+        <li><kbd>Ctrl</kbd> + <kbd>F</kbd> Search</li>
+        <li><kbd>Alt</kbd> + <kbd>S</kbd> Support</li>
+      </ul>
+      <hr>
+      <label><strong>Aside (Categories)</strong></label>
+      <ul>
+        <li><a href="luxurywatch.html">Luxury Watches</a></li>
+        <li><a href="sportswatch.html">Sport Watches</a></li>
+        <li><a href="classicwatch.html">Classic Watches</a></li>
+        <li><a href="digitalwatch.html">Digital Watches</a></li>
+      </ul>
+
+      <br>
+
+      <label><strong>Target Link</strong></label><br>
+      <a href="luxurywatch.html" target="_blank" class="catalog-link">View Full Watch Catalog</a>
+    </aside>
+
+    <main class="main">
+
+      <label><strong>Product Search (Datalist)</strong></label>
+      <input list="watch-models" id="watch-search" name="watch-search" placeholder="Search for a model...">
+      <datalist id="watch-models">
+        <option value="Vivet Classic">
+        <option value="Vivet Sport">
+        <option value="Vivet Digital">
+        <option value="Vivet Luxury">
+        <option value="Vivet Smart">
+      </datalist>
+
+      <br><br>
+      <label><strong>Main Content (Products)</strong></label>
+      <p>Our watches are designed with <em>precision and timeless style</em>.</p>
+
+      <label><strong>Watch Price Table</strong></label>
+      <table>
+        <tr>
+          <th>Watch Model</th>
+          <th>Type</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>Vivet Classic</td>
+          <td>Classic</td>
+          <td>$120</td>
+        </tr>
+        <tr>
+          <td>Vivet Sport</td>
+          <td>Sport</td>
+          <td>$150</td>
+        </tr>
+        <tr>
+          <td>Vivet Smart</td>
+          <td>Smart</td>
+          <td>$200</td>
+        </tr>
+      </table>
+
+      <form method="GET" action="http://localhost/echo.py" class="customer-forms"
+        style="background: #fff; padding: 30px; border: 1px solid #c5a059; border-radius: 0;">
+
+        <h2 style="color: #1a1a1a; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">
+          Custom Watch Consultation
+        </h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <p>
+            <label><strong>Select Collection:</strong></label>
+            <select name="HTML List Type Selector One" size="4"
+              style="width: 100%; padding: 8px; border: 1px solid #ddd; margin-top: 5px;">
+              <optgroup label="Vivet Collections">
+                <option value="UL">Luxury Series</option>
+                <option value="OL" selected>Sport Series</option>
+                <option value="DL">Digital Series</option>
+              </optgroup>
+            </select>
+          </p>
+
+          <p>
+            <label><strong>Display Format:</strong></label>
+            <select name="HTML List Type Selector Two"
+              style="width: 100%; padding: 8px; border: 1px solid #ddd; margin-top: 5px;">
+              <optgroup label="View Options">
+                <option value="UL">Grid View</option>
+                <option value="OL">List View</option>
+                <option value="DL" selected>Detailed Specs</option>
+              </optgroup>
+            </select>
+          </p>
+        </div>
+
+        <div style="margin-top: 20px; border-top: 2px solid #c5a059; padding-top: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span>Dial Color: <input type="color" name="color" value="#c5a059"
+                style="border:none; background:none; cursor:pointer;"></span>
+            <span>Appointment Time: <input type="time" name="time" style="padding: 5px; border: 1px solid #ddd;"></span>
+          </div>
+
+          <p style="margin-bottom: 15px;">
+            Strap Length (1-10):
+            <input type="range" name="range" min="1" max="10" style="width: 100%; accent-color: #c5a059;">
+          </p>
+
+          <p>
+            <label><strong>Reference Image URL:</strong></label><br>
+            <input type="url" name="url" placeholder="https://vivet.com/reference" required
+              style="width: 100%; padding: 10px; margin-top: 5px;">
+          </p>
+        </div>
+
+        <div style="background: #fdfaf4; padding: 20px; margin-top: 20px; border: 1px solid #eee;">
+          <label><strong>Client Details</strong></label>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+            <input type="text" name="Name" placeholder="Full Name" style="width: 100%;">
+            <input type="password" name="Pwd" placeholder="Access Key" style="width: 100%;">
+          </div>
+          <div style="margin-top: 10px;">
+            Zip Code: <input type="text" name="Zip" size="5" maxlength="5" style="width: 80px; padding: 8px;">
+          </div>
+        </div>
+
+        <div style="margin-top: 30px; display: flex; justify-content: flex-end; gap: 15px;">
+          <input type="reset" value="Clear"
+            style="background: transparent; border: 1px solid #999; color: #666; padding: 10px 20px;">
+          <input type="submit" value="Submit Consultation">
+        </div>
+
+      </form>
+
+      <br><br>
+
+      <label><strong>Unordered List (Watch Features)</strong></label>
+      <ul>
+        <li>Water Resistant</li>
+        <li>Scratch Resistant Glass</li>
+        <li>Long Battery Life</li>
+        <li>Elegant Design</li>
+      </ul>
+
+      <br>
+
+      <label><strong>Ordered List (How to Buy)</strong></label>
+      <ol>
+        <li>Select a watch</li>
+        <li>Add to cart</li>
+        <li>Enter shipping details</li>
+        <li>Confirm payment</li>
+      </ol>
+
+      <br>
+
+      <label><strong>Description List (Watch Types)</strong></label>
+      <dl>
+        <dt>Luxury Watch</dt>
+        <dd>High-end watches made with premium materials.</dd>
+        <dt>Sport Watch</dt>
+        <dd>Designed for durability and active lifestyles.</dd>
+        <dt>Smart Watch</dt>
+        <dd>Digital watches with apps and health tracking.</dd>
+      </dl>
+
+      <label><strong>Dialog / Button</strong></label><br>
+      <button id="openDialog">Show Watch Info</button>
+      <dialog id="watchDialog">
+        <p>This is Vivet's featured watch of the month!</p>
+        <button id="closeDialog">Close</button>
+      </dialog>
+
+      <br><br>
+
+      <label><strong>Watch Figure</strong></label><br>
+      <figure>
+        <img src="img/watch.jpg" alt="Vivet Watch" width="100%">
+        <figcaption>Vivet Classic Watch</figcaption>
+      </figure>
+
+      <br>
+
+      <label><strong>Iframe</strong></label><br>
+      <iframe src="sportswatch.html" width="100%" height="700" title="Example Site"></iframe>
+
+      <br><br>
+
+      <label><strong>Image Map</strong></label><br>
+      <img src="img/imagemap.png" usemap="#watchmap" alt="Watch Map" width="400">
+
+      <map name="watchmap">
+        <area shape="rect" coords="0,0,200,200" href="luxurywatch.html" alt="Luxury Watches"
+          title="Go to Luxury Collection">
+        <area shape="rect" coords="200,0,400,200" href="sportswatch.html" alt="Sport Watches"
+          title="Go to Sport Collection">
+        <area shape="rect" coords="0,200,200,200" href="classicwatch.html" alt="Classic Watches"
+          title="Go to Classic Collection">
+        <area shape="rect" coords="200,200,400,400" href="digitalwatch.html" alt="Digital Watches"
+          title="Go to Digital Collection">
+      </map>
+
+      <br><br>
+
+      <label><strong>Object PDF</strong></label><br>
+      <object data="files/vivet_watch_catalog.pdf" type="application/pdf" width="100%" height="710">
+        <p>PDF cannot be displayed. <a href="files/vivet_watch_catalog.pdf" target="_blank">Download PDF</a>.</p>
+      </object>
+
+      <br><br>
+
+      <label><strong>Watch Image</strong></label><br>
+      <img src="img/sports.png" alt="Watch Product" width="100%">
+
+      <br><br>
+
+      <label><strong>Sample Audio</strong></label><br>
+      <audio controls>
+        <source src="audio/audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <br><br>
+
+      <label><strong>Order Progress</strong></label><br>
+      <p>Order Processing:</p>
+      <progress value="70" max="100">70%</progress>
+
+      <br><br>
+
+      <label><strong>Improved Vector Graphic (SVG)</strong></label><br>
+      <div class="svg-container">
+        <svg width="220" height="300" viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg">
+          <g id="watch">
+            <rect x="90" y="10" width="40" height="60" rx="10" fill="#222" />
+            <rect x="90" y="150" width="40" height="60" rx="10" fill="#222" />
+            <circle id="watchBody" cx="110" cy="110" r="55" fill="gold" stroke="#333" stroke-width="3" />
+            <circle cx="110" cy="110" r="45" fill="white" />
+            <line x1="110" y1="75" x2="110" y2="85" stroke="black" stroke-width="3" />
+            <line x1="110" y1="135" x2="110" y2="145" stroke="black" stroke-width="3" />
+            <line x1="75" y1="110" x2="85" y2="110" stroke="black" stroke-width="3" />
+            <line x1="135" y1="110" x2="145" y2="110" stroke="black" stroke-width="3" />
+            <line x1="110" y1="110" x2="110" y2="85" stroke="black" stroke-width="3" />
+            <line x1="110" y1="110" x2="135" y2="110" stroke="black" stroke-width="3" />
+          </g>
+          <g id="colors">
+            <circle cx="40" cy="250" r="12" fill="#ff00ff" stroke="black" stroke-width="2"
+              onclick="changeColor('#ff00ff')" />
+            <circle cx="80" cy="250" r="12" fill="#00ff00" stroke="black" stroke-width="2"
+              onclick="changeColor('#00ff00')" />
+            <circle cx="120" cy="250" r="12" fill="#00ffff" stroke="black" stroke-width="2"
+              onclick="changeColor('#00ffff')" />
+            <circle cx="160" cy="250" r="12" fill="#ffff00" stroke="black" stroke-width="2"
+              onclick="changeColor('#ffff00')" />
+            <circle cx="200" cy="250" r="12" fill="#ff9900" stroke="black" stroke-width="2"
+              onclick="changeColor('#ff9900')" />
+          </g>
+        </svg>
+      </div>
+
+      <br><br>
+
+      <label><strong>Advice</strong></label>
+      <blockquote>
+        Always choose a watch that matches both your lifestyle and personality.
+      </blockquote>
+
+      <label><strong>Video Example</strong></label><br>
+      <video width="100%" height="500" controls>
+        <source src="video/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <br><br>
+
+      <label><strong>Format Keys</strong></label>
+      <p>Press <kbd>Ctrl</kbd> + <kbd>F</kbd> to search watches quickly.</p>
+
+      <br>
+
+      <label><strong>Product Popularity (Meter)</strong></label><br>
+      <meter value="8" min="0" max="10">8 out of 10</meter>
+
+      <section class="customer-forms">
+        <hr>
+        <h2>Customer Portal & Feedback</h2>
+
+        <fieldset>
+          <legend><strong>Vivet Collector's Club</strong></legend>
+          <p style="font-size: 0.9rem;">Get exclusive access to limited edition releases and horology news.</p>
+          <label for="reg-email">Email Address:</label>
+          <input type="email" id="reg-email" placeholder="Enter your email">
+          <button type="button">JOIN NOW</button>
+        </fieldset>
+
+        <hr>
+
+        <form method="GET" action="http://localhost/echo.py">
+          <p><strong>Checkbox</strong><br>
+            <input type="checkbox" name="Send" value="Details"> Send new arrivals
+            <input type="checkbox" name="Send" value="Prices"> Send monthly sales
+          </p>
+
+          <fieldset>
+            <legend>Preferences</legend>
+            <label for="movement">What is your favorite watch movement?</label><br>
+            <input type="radio" name="Definition" value="Quartz"> Quartz<br>
+            <input type="radio" name="Definition" value="Automatic"> Automatic<br>
+            <input type="radio" name="Definition" value="Mechanical" checked> Mechanical
+
+            <br><br>
+
+            <label for="country">Preferred Shipping Region:</label><br>
+            <select id="country" name="country" style="width: 100%; padding: 8px; margin-top: 5px;">
+              <option value="ph">Philippines (Luzon/Visayas/Mindanao)</option>
+              <option value="us">United States</option>
+              <option value="jp">Japan</option>
+              <option value="uk">United Kingdom</option>
+            </select>
+
+            <div style="margin-top: 15px;">
+              <input type="submit" value="Save Preferences">
+            </div>
+          </fieldset>
+        </form>
+
+        <hr>
+
+        <fieldset>
+          <legend>Upload</legend>
+          <form method="POST" action="upload.py" enctype="multipart/form-data">
+            <input type="file" name="Upload">
+            <input type="submit" value="Upload Photo">
+          </form>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+          <legend>Quick Order: Vivet Classic</legend>
+          <form oninput="sum.value=multiply(qty,price)">
+            <label>Quantity:</label>
+            <input type="number" id="qty" name="Quantity" min="1" max="10" value="1">
+
+            <input type="hidden" name="product_id" value="VIVET-CL-001">
+            <input type="hidden" id="price" value="120.00">
+
+            <p style="margin-top: 10px; font-weight: bold; color: #c5a059;">
+              <output name="sum" for="qty price">Total: $120.00</output>
+            </p>
+            <br>
+            <input type="submit" value="Confirm Purchase">
+          </form>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+          <legend>Exclusive Secret Offer</legend>
+          <p><em>Check out our next sale item:</em></p>
+
+          <button type="button" id="toggleOffer" class="toggle-btn">
+            <span id="toggleStatus">Show</span> Secret Offer
+          </button>
+
+          <br>
+
+          <img src="img/hiddensale.png" id="secretImg" class="offer-img hidden" alt="Secret Sale">
+        </fieldset>
+
+        <hr>
+
+        <label><strong>Review our Service:</strong></label>
+        <form method="POST" action="http://localhost/echo.py">
+          <textarea name="Review" rows="5" style="width:100%" placeholder="Tell us what you think..."></textarea>
+          <p><input type="submit" value="Submit Review"></p>
+        </form>
+      </section>
+
+      <br><br>
+
+      <label><strong>About Vivet</strong></label>
+      <p>
+        Vivet watches combine modern design with reliable craftsmanship.
+        Our goal is to deliver elegant timepieces suitable for everyday use.
+      </p>
+
+      <br>
+
+      <label><strong>Official Partner</strong></label>
+      <div class="protocol-link-container">
+        <a href="https://rolex.com" target="_blank" class="luxury-link">
+          Explore ROLEX Store
+          <span class="link-arrow">→</span>
+        </a>
+      </div>
+
+      <br><br>
+
+      <label><strong>Boutique Information</strong></label>
+      <address class="luxury-address">
+        <div class="brand-name">VIVET WATCH STORE</div>
+        <div class="contact-details">
+          <a href="mailto:contact@vivetwatch.com" class="address-link">contact@vivetwatch.com</a>
+          <p class="phone-number">P: 0968-395-8471</p>
+        </div>
+        <div class="address-location">Calabarzon, Philippines</div>
+      </address>
+    </main>
+
+    <section class="future">
+      <label><strong>Future Add Section</strong></label>
+      <p>This area can be used later for promotions, sales, or new arrivals.</p>
+    </section>
+
+  </div>
+
+  <footer class="footer" id="footer">
+    <p>© 2026 Vivet Watch Store</p>
+  </footer>
+
+  <script>
+    const watchDialog = document.getElementById('watchDialog');
+    const openBtn = document.getElementById('openDialog');
+    const closeBtn = document.getElementById('closeDialog');
+
+    if (openBtn) openBtn.onclick = () => watchDialog.showModal();
+    if (closeBtn) closeBtn.onclick = () => watchDialog.close();
+
+    function changeColor(color) {
+      const watchBody = document.getElementById('watchBody');
+      if (watchBody) {
+        watchBody.setAttribute('fill', color);
+      }
+    }
+
+    function multiply(q, p) {
+      let result = parseFloat(q.value) * parseFloat(p.value);
+      if (isNaN(result) || result < 1) return ' ';
+      return 'Total: $' + result.toFixed(2);
+    }
+
+    const toggleBtn = document.getElementById('toggleOffer');
+    const secretImg = document.getElementById('secretImg');
+    const statusLabel = document.getElementById('toggleStatus');
+
+    if (toggleBtn && secretImg) {
+      toggleBtn.onclick = function () {
+        secretImg.classList.toggle('hidden');
+
+        if (secretImg.classList.contains('hidden')) {
+          statusLabel.innerText = 'Show';
+        } else {
+          statusLabel.innerText = 'Hide';
+        }
+      };
+    }
+  </script>
+
+</body>
+
+</html>

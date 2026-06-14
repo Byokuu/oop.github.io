@@ -1,4 +1,29 @@
-/* GLOBAL STYLES */
+/* ==========================================================================
+   CUSTOM DESIGN VARIABLES (LUXURY BRAND CONFIGURATION)
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --color-bg-main: #f8f8f8;
+    --color-bg-card: #ffffff;
+    --color-bg-dark: #1a1a1a;
+    --color-accent-gold: #c5a059;
+    --color-text-dark: #222222;
+    --color-text-muted: #666666;
+    --color-border-light: #eee2e2;
+    --color-border-faint: #f2f2f2;
+
+    /* Typography */
+    --font-primary: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: 'Georgia', serif;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.4s ease;
+}
+
+/* ==========================================================================
+   GLOBAL STYLES & RESET
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,28 +31,33 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-primary);
     line-height: 1.8;
-    background-color: #f8f8f8;
-    color: #222;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-dark);
     -webkit-font-smoothing: antialiased;
 }
 
-/* GLOBAL GOLD DIVIDERS */
 hr {
     border: 0;
-    border-top: 1px solid #c5a059;
-    /* Thinner line looks more elegant */
+    border-top: 1px solid var(--color-accent-gold);
     margin: 40px 0;
     opacity: 0.6;
 }
 
-/* HEADER - Parallax feel */
+img {
+    border-radius: 0;
+    transition: var(--transition-slow);
+}
+
+/* ==========================================================================
+   HEADER HERO & NAVIGATION
+   ========================================================================== */
 .header {
+    position: relative;
     height: 450px;
     overflow: hidden;
-    border-bottom: 4px solid #c5a059;
-    position: relative;
+    border-bottom: 4px solid var(--color-accent-gold);
 }
 
 .header img {
@@ -35,7 +65,6 @@ hr {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.7);
-    /* Darker filter makes white text pop */
     display: block;
 }
 
@@ -50,27 +79,24 @@ hr {
     pointer-events: none;
 }
 
-/* NAVIGATION */
 .nav {
-    background: #1a1a1a;
-    color: #c5a059;
-    padding: 25px 40px;
-    /* More vertical breathing room */
-    text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: var(--color-bg-dark);
+    color: var(--color-accent-gold);
+    padding: 25px 40px;
+    text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .nav label {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    /* Increased letter spacing */
-    font-size: 0.7rem;
     display: block;
     margin-bottom: 12px;
-    color: #666;
+    color: var(--color-text-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 .nav a {
@@ -78,87 +104,114 @@ hr {
     text-decoration: none;
     margin: 0 20px;
     font-size: 0.9rem;
-    text-transform: uppercase;
-    /* Professional uppercase nav */
-    letter-spacing: 2px;
     font-weight: 300;
-    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition-slow);
 }
 
 .nav a:hover {
-    color: #c5a059;
+    color: var(--color-accent-gold);
     text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
 }
 
-/* MAIN CONTAINER - Grid refinement */
+/* ==========================================================================
+   MAIN STRUCTURAL LAYOUT
+   ========================================================================== */
 .container {
     display: grid;
-    grid-template-columns: 340px 1fr 340px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Fallback container flexibility */
     gap: 40px;
     max-width: 1900px;
     margin: 60px auto;
     padding: 0 30px;
 }
 
-/* ASIDE & FUTURE SECTIONS */
+@media (min-width: 1200px) {
+    .container {
+        grid-template-columns: 340px 1fr 340px;
+    }
+}
+
+/* Component Structural Containers */
 .aside,
 .future {
-    background: #fff;
+    height: fit-content;
+    background: var(--color-bg-card);
     padding: 35px;
     border-radius: 0;
-    border-top: 3px solid #1a1a1a;
+    border-top: 3px solid var(--color-bg-dark);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    height: fit-content;
 }
 
-.aside label,
-.main>label,
-.future label {
-    display: block;
-    font-family: 'Georgia', serif;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #1a1a1a;
-    border-bottom: 1px solid #c5a059;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-}
-
-.aside ul {
-    list-style: none;
-}
-
-.aside li {
-    padding: 12px 0;
-    border-bottom: 1px solid #f2f2f2;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
-.aside li:hover {
-    color: #c5a059;
-    padding-left: 8px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* MAIN CONTENT */
 .main {
-    background: #ffffff;
+    background: var(--color-bg-card);
     padding: 50px;
     border-radius: 0;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.04);
 }
 
+/* Structural Header Labels */
+.aside label,
+.main > label,
+.future label {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-bg-dark);
+    border-bottom: 1px solid var(--color-accent-gold);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & CONTENT BLOCKS
+   ========================================================================== */
 .main p {
     font-size: 1.05rem;
-    color: #444;
+    color: #444444;
     margin-bottom: 25px;
 }
 
-/* TABLES */
+blockquote {
+    margin: 40px 0;
+    padding: 30px 40px;
+    background: #fdfdfd;
+    border-left: 3px solid var(--color-accent-gold);
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+em {
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-accent-gold);
+    border-bottom: 1px solid var(--color-accent-gold);
+}
+
+figure {
+    margin: 40px 0;
+    padding: 30px;
+    background: var(--color-bg-card);
+    border: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+figcaption {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    color: #888888;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   DATA TABLES
+   ========================================================================== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -168,8 +221,8 @@ table {
 }
 
 th {
-    background-color: #1a1a1a;
-    color: #c5a059;
+    background-color: var(--color-bg-dark);
+    color: var(--color-accent-gold);
     padding: 18px 15px;
     text-align: left;
     text-transform: uppercase;
@@ -179,8 +232,7 @@ th {
 
 td {
     padding: 18px 15px;
-    border-bottom: 1px solid #eee;
-    /* Minimalist horizontal lines only */
+    border-bottom: 1px solid var(--color-border-light);
     border-left: none;
     border-right: none;
     border-top: none;
@@ -188,136 +240,114 @@ td {
 
 tr:hover {
     background-color: #fcf9f2;
-    /* Subtle highlight on hover */
 }
 
-/* BUTTONS & DIALOG */
-button {
-    background: #1a1a1a;
-    color: #c5a059;
-    /* Gold text on black button */
+/* ==========================================================================
+   INTERACTIVE BUTTONS, UTILITIES & LINKS
+   ========================================================================== */
+button, 
+.toggle-btn {
+    background: var(--color-bg-dark);
+    color: var(--color-accent-gold);
     padding: 15px 30px;
-    border: 1px solid #c5a059;
+    border: 1px solid var(--color-accent-gold);
     border-radius: 0;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 600;
+    transition: var(--transition-smooth);
 }
 
-button:hover {
-    background: #c5a059;
-    color: #1a1a1a;
+.toggle-btn {
+    padding: 12px 25px;
+    font-family: var(--font-primary);
+    font-size: 0.75rem;
+}
+
+button:hover, 
+.toggle-btn:hover {
+    background: var(--color-accent-gold);
+    color: var(--color-bg-dark);
     box-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
 }
 
-dialog {
-    border: none;
-    border-radius: 0;
-    padding: 50px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-    background: #fff;
-    max-width: 500px;
+/* Sidebar List Anchors */
+.aside ul {
+    list-style: none;
 }
 
-/* MEDIA ELEMENTS */
-img {
-    border-radius: 0;
-    transition: all 0.5s ease;
-}
-
-figure {
-    text-align: center;
-    background: #fff;
-    padding: 30px;
-    border: 1px solid #f0f0f0;
-    margin: 40px 0;
-}
-
-figcaption {
-    font-family: 'Georgia', serif;
-    font-size: 0.9rem;
-    color: #888;
-    margin-top: 15px;
-    letter-spacing: 1px;
-}
-
-/* FOOTER */
-.footer {
-    background: #1a1a1a;
-    color: #fff;
-    text-align: center;
-    padding: 80px 40px;
-    margin-top: 100px;
-    border-top: 4px solid #c5a059;
-}
-
-.footer p {
-    letter-spacing: 3px;
+.aside li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border-faint);
+    font-size: 0.85rem;
     text-transform: uppercase;
-    font-size: 0.75rem;
-    opacity: 0.5;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
 }
 
-/* MISC ELEMENTS */
-blockquote {
-    border-left: 3px solid #c5a059;
-    padding: 30px 40px;
-    background: #fdfdfd;
-    font-family: 'Georgia', serif;
-    font-size: 1.2rem;
-    color: #333;
-    margin: 40px 0;
-}
-
-em {
-    font-style: italic;
-    text-decoration: none;
-    color: #c5a059;
-    font-weight: 500;
-    border-bottom: 1px solid #c5a059;
-}
-
-progress,
-meter {
-    width: 100%;
-    height: 8px;
-    /* Slimmer bar is more professional */
-    margin-bottom: 20px;
-    border-radius: 0;
-}
-
-progress::-webkit-progress-bar {
-    background-color: #eee;
-}
-
-progress::-webkit-progress-value {
-    background-color: #c5a059;
+.aside li:hover {
+    color: var(--color-accent-gold);
+    padding-left: 8px;
 }
 
 .aside ul li a,
 .aside .catalog-link {
-    text-decoration: none !important;
-    color: #1a1a1a !important;
     display: inline-block;
-    transition: 0.3s ease;
+    color: var(--color-bg-dark) !important;
+    text-decoration: none !important;
     font-weight: 400;
+    transition: var(--transition-smooth);
 }
 
 .aside ul li a:hover,
 .aside .catalog-link:hover {
-    color: #c5a059 !important;
+    color: var(--color-accent-gold) !important;
     transform: translateX(5px);
 }
 
-.main img[usemap] {
-    display: block;
-    margin: 40px auto;
-    max-width: 100%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+/* Dynamic Dialog Modules */
+dialog {
+    border: none;
+    border-radius: 0;
+    padding: 50px;
+    background: var(--color-bg-card);
+    max-width: 500px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* Inline Dynamic Hyperlinks */
+.luxury-link {
+    display: inline-block;
+    color: var(--color-bg-dark);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-accent-gold);
+    padding-bottom: 5px;
+    transition: var(--transition-slow);
+}
+
+.luxury-link:hover {
+    color: var(--color-accent-gold);
+    letter-spacing: 5px;
+}
+
+.link-arrow {
+    margin-left: 10px;
+    transition: var(--transition-slow);
+}
+
+.luxury-link:hover .link-arrow {
+    transform: translateX(10px);
+}
+
+/* ==========================================================================
+   SYSTEM COMPONENT INPUT INTERFACES (FORMS)
+   ========================================================================== */
 .customer-forms {
     margin-top: 80px;
     padding-top: 50px;
@@ -328,28 +358,29 @@ progress::-webkit-progress-value {
     text-transform: uppercase;
     letter-spacing: 6px;
     margin-bottom: 50px;
-    color: #1a1a1a;
+    color: var(--color-bg-dark);
     font-weight: 300;
 }
 
 .customer-forms fieldset {
-    border: 1px solid #eee;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
     padding: 40px;
     margin-bottom: 40px;
-    background-color: #fff;
     border-radius: 0;
 }
 
 .customer-forms legend {
+    background: var(--color-bg-card);
+    padding: 0 20px;
+    color: var(--color-accent-gold);
+    font-size: 0.8rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #c5a059;
-    background: #fff;
-    padding: 0 20px;
-    font-size: 0.8rem;
 }
 
+/* Uniform Text Area Fields Configuration */
 .customer-forms input[type="text"],
 .customer-forms input[type="password"],
 .customer-forms input[type="email"],
@@ -358,17 +389,17 @@ progress::-webkit-progress-value {
     width: 100%;
     padding: 15px;
     margin: 10px 0 25px 0;
+    background-color: #fafafa;
     border: 1px solid #e0e0e0;
     border-radius: 0;
-    background-color: #fafafa;
     font-family: inherit;
-    transition: all 0.3s;
+    transition: var(--transition-smooth);
 }
 
 .customer-forms input:focus,
 .customer-forms textarea:focus {
-    border-color: #c5a059;
-    background-color: #fff;
+    background-color: var(--color-bg-card);
+    border-color: var(--color-accent-gold);
     outline: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
 }
@@ -376,17 +407,47 @@ progress::-webkit-progress-value {
 .customer-forms input[type="submit"] {
     display: block;
     width: 100%;
-    /* Full width submit button for emphasis */
-    background-color: #1a1a1a;
-    color: #c5a059;
+    background-color: var(--color-bg-dark);
+    color: var(--color-accent-gold);
     padding: 18px;
-    border: 1px solid #c5a059;
+    border: 1px solid var(--color-accent-gold);
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
 }
 
 .customer-forms input[type="submit"]:hover {
-    background-color: #c5a059;
-    color: #1a1a1a;
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-dark);
+}
+
+/* Progress Control Render Blocks */
+progress,
+meter {
+    width: 100%;
+    height: 8px;
+    margin-bottom: 20px;
+    border-radius: 0;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #eee2e2;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--color-accent-gold);
+}
+
+/* ==========================================================================
+   ASSET HANDLING MEDIA & WRAPPERS
+   ========================================================================= */
+.main img[usemap] {
+    display: block;
+    margin: 40px auto;
+    max-width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .offer-img {
@@ -395,20 +456,6 @@ progress::-webkit-progress-value {
     display: block;
     filter: grayscale(20%);
     border: none;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.toggle-btn {
-    background-color: #1a1a1a;
-    color: #c5a059;
-    border: 1px solid #c5a059;
-    padding: 12px 25px;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
 }
 
 .svg-container {
@@ -426,52 +473,23 @@ progress::-webkit-progress-value {
     width: 320px;
 }
 
-/* LUXURY PROTOCOL LINK */
-.protocol-link-container {
-    padding: 20px 0;
-}
-
-.luxury-link {
-    display: inline-block;
-    color: #1a1a1a;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-bottom: 2px solid #c5a059;
-    padding-bottom: 5px;
-    transition: all 0.4s ease;
-}
-
-.luxury-link:hover {
-    color: #c5a059;
-    letter-spacing: 5px; /* Subtle expansion effect */
-}
-
-.link-arrow {
-    margin-left: 10px;
-    transition: transform 0.4s ease;
-}
-
-.luxury-link:hover .link-arrow {
-    transform: translateX(10px);
-}
-
+/* ==========================================================================
+   BRAND COMPONENT ARCHITECTURE & FOOTER BLOCK
+   ========================================================================== */
 .luxury-address {
     font-style: normal;
-    background: #1a1a1a;
-    color: #fff;
+    background: var(--color-bg-dark);
+    color: #ffffff;
     padding: 40px;
-    border-left: 5px solid #c5a059;
+    border-left: 5px solid var(--color-accent-gold);
     margin-top: 20px;
 }
 
 .brand-name {
-    font-family: 'Georgia', serif;
+    font-family: var(--font-serif);
     font-size: 1.5rem;
     letter-spacing: 5px;
-    color: #c5a059;
+    color: var(--color-accent-gold);
     margin-bottom: 15px;
 }
 
@@ -480,7 +498,7 @@ progress::-webkit-progress-value {
 }
 
 .address-link {
-    color: #ccc;
+    color: #cccccc;
     text-decoration: none;
     display: block;
     margin-bottom: 5px;
@@ -488,21 +506,42 @@ progress::-webkit-progress-value {
 }
 
 .address-link:hover {
-    color: #c5a059;
+    color: var(--color-accent-gold);
 }
 
 .phone-number {
     font-size: 0.85rem;
     letter-spacing: 1px;
-    color: #888;
+    color: #888888;
 }
 
 .address-location {
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 2px;
-    color: #666;
+    color: #666666;
     margin-top: 20px;
-    border-top: 1px solid #333;
     padding-top: 10px;
+    border-top: 1px solid #333333;
+}
+
+.footer {
+    background: var(--color-bg-dark);
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 40px;
+    margin-top: 100px;
+    border-top: 4px solid var(--color-accent-gold);
+}
+
+.footer p {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+/* Global Hidden Modifier Utility Class */
+.hidden {
+    display: none !important;
 }

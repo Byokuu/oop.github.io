@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vivet Watch Store</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/templates/style.css">
 </head>
 
 <body>
 
   <header class="header">
-    <img src="img/header.jpg" alt="Vivet Banner">
+    <img src="../static/img/header.jpg" alt="Vivet Banner">
     <div class="header-title">VIVET</div>
   </header>
 
   <nav class="nav">
     <label>Collections</label>
-    <a href="index.html">Home</a>
-    <a href="luxurywatch.html">Luxury</a>
+    <a href="index.html">Home</a> <a href="luxurywatch.html">Luxury</a>
     <a href="sportswatch.html">Sports</a>
     <a href="classicwatch.html">Classic</a>
     <a href="digitalwatch.html">Digital</a>
@@ -89,7 +89,7 @@
         </tr>
       </table>
 
-      <form method="GET" action="http://localhost/echo.py" class="customer-forms"
+      <form method="POST" action="/order" class="customer-forms"
         style="background: #fff; padding: 30px; border: 1px solid #c5a059; border-radius: 0;">
 
         <h2 style="color: #1a1a1a; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">
@@ -203,19 +203,19 @@
 
       <label><strong>Watch Figure</strong></label><br>
       <figure>
-        <img src="img/watch.jpg" alt="Vivet Watch" width="100%">
+        <img src="../static/img/watch.jpg" alt="Vivet Classic Watch" width="100%">
         <figcaption>Vivet Classic Watch</figcaption>
       </figure>
 
       <br>
 
       <label><strong>Iframe</strong></label><br>
-      <iframe src="sportswatch.html" width="100%" height="700" title="Example Site"></iframe>
+      <iframe src="sportswatch.html" width="100%" height="700"></iframe>
 
       <br><br>
 
       <label><strong>Image Map</strong></label><br>
-      <img src="img/imagemap.png" usemap="#watchmap" alt="Watch Map" width="400">
+      <img src="../static/img/imagemap.png" usemap="#watchmap" alt="Watch Map" width="400">
 
       <map name="watchmap">
         <area shape="rect" coords="0,0,200,200" href="luxurywatch.html" alt="Luxury Watches"
@@ -238,13 +238,13 @@
       <br><br>
 
       <label><strong>Watch Image</strong></label><br>
-      <img src="img/sports.png" alt="Watch Product" width="100%">
+      <img src="../static/img/sports.png" alt="Watch Product" width="100%">
 
       <br><br>
 
       <label><strong>Sample Audio</strong></label><br>
       <audio controls>
-        <source src="audio/audio.mp3" type="audio/mpeg">
+        <source src="../static/audio/audio.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
 
@@ -295,7 +295,7 @@
 
       <label><strong>Video Example</strong></label><br>
       <video width="100%" height="500" controls>
-        <source src="video/video.mp4" type="video/mp4">
+        <source src="../static/video/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
 
@@ -323,7 +323,8 @@
 
         <hr>
 
-        <form method="GET" action="http://localhost/echo.py">
+        <form method="POST" action="/order" class="customer-forms"
+          style="background: #fff; padding: 30px; border: 1px solid #c5a059; border-radius: 0;">
           <p><strong>Checkbox</strong><br>
             <input type="checkbox" name="Send" value="Details"> Send new arrivals
             <input type="checkbox" name="Send" value="Prices"> Send monthly sales
@@ -393,13 +394,14 @@
 
           <br>
 
-          <img src="img/hiddensale.png" id="secretImg" class="offer-img hidden" alt="Secret Sale">
+          <img src="../static/img/hiddensale.png" id="secretImg" class="offer-img hidden" alt="Secret Sale">
         </fieldset>
 
         <hr>
 
         <label><strong>Review our Service:</strong></label>
-        <form method="POST" action="http://localhost/echo.py">
+        <form method="POST" action="/order" class="customer-forms"
+          style="background: #fff; padding: 30px; border: 1px solid #c5a059; border-radius: 0;">
           <textarea name="Review" rows="5" style="width:100%" placeholder="Tell us what you think..."></textarea>
           <p><input type="submit" value="Submit Review"></p>
         </form>
